@@ -304,6 +304,26 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-set-key (kbd "C-q") 'anzu-query-replace-regexp)
 
+  ; c-mode
+  (add-hook 'c-mode-common-hook
+            '(lambda ()
+               (c-set-style "java")
+               (setq c-basic-offset 4)
+               (c-set-offset 'access-label -4)
+               (c-set-offset 'arglist-close 4)
+               (c-set-offset 'arglist-cont-nonempty 4)
+               (c-set-offset 'arglist-intro 4)
+               (c-set-offset 'case-label 4)
+               (c-set-offset 'inher-cont 0)
+
+               (c-set-offset 'member-init-cont -4)
+               (c-set-offset 'member-init-intro 0)
+               (c-set-offset 'statement-case-open 0)
+               (c-set-offset 'statement-cont 4)
+               (c-set-offset 'substatement-open 0)
+               (c-set-offset 'topmost-intro-cont 4)
+               ))
+
   ; objc-mode
   (add-to-list 'auto-mode-alist '("\\.m?$" . objc-mode))
   (add-to-list 'auto-mode-alist '("\\.mm?$" . objc-mode))
